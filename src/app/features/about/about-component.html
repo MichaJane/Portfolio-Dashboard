@@ -1,4 +1,5 @@
 <main class="about-page">
+  @if(aboutMe$ | async; as aboutMe){
   <section class="profile">
     <mat-card class="profile-card">
       <mat-card-header>
@@ -10,23 +11,23 @@
         />
       </mat-card-header>
       <mat-card-content class="profile-card-content">
-        <h3>[FULL NAME]</h3>
-        <p>Frontend Developer</p>
+        <h3>{{ aboutMe.name }}</h3>
+        <p>{{ aboutMe.title }}</p>
         <div class="profile-socials">
-          <a href="mailto:hellomyemail@gmail.com" target="_blank">
+          <a [href]="`mailto:${aboutMe.contact.email}`" target="_blank">
             <mat-icon svgIcon="gmail"></mat-icon>
           </a>
-          <a href="https://linkedin.com" target="_blank">
+          <a [href]="aboutMe.contact.linkedin" target="_blank">
             <mat-icon svgIcon="linkedin"></mat-icon>
           </a>
-          <a href="https://github.com" target="_blank">
+          <a [href]="aboutMe.contact.github" target="_blank">
             <mat-icon svgIcon="github"></mat-icon>
           </a>
         </div>
         <div class="skills-bar">
           <skills-component
             [view]="'progressBar'"
-            [skills]="(skills | async) ?? []"
+            [skills]="aboutMe.skill"
           ></skills-component>
         </div>
       </mat-card-content>
@@ -35,14 +36,10 @@
 
   <section class="about-intro">
     <profile-card-component title="About Me" icon="person">
-      <span card-content>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel libero hic
-        aliquam nisi fuga obcaecati ut asperiores. Commodi alias quae
-        repellendus laboriosam laborum perspiciatis, eveniet voluptatum animi
-        doloribus neque? Corporis.
-      </span>
+      <span card-content>{{ aboutMe.bio }}</span>
     </profile-card-component>
   </section>
+  }
 
   <section class="about-summary">
     <about-summary-component></about-summary-component>
