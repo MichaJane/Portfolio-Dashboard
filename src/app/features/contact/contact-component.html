@@ -2,29 +2,36 @@
   <div class="contact-info">
     <h2>Contact Me</h2>
     <p class="contact-tagline">Feel free to contact me for any questions.</p>
+    @if(contactLinks$ | async; as links){
     <div class="contact-links">
       <a
-        href="mailto:faustino.michajane@gmail.com"
+        [href]="`mailto:${links.contact.email}`"
         target="_blank"
         rel="noopener noreferrer"
       >
         <mat-icon>mail_outline</mat-icon>
         <span>Email</span>
       </a>
-      <a href="https://linkedin.com" target="_blank">
+      <a [href]="links.contact.linkedin" target="_blank">
         <mat-icon svgIcon="linkedin"></mat-icon>
         <span>Linkedin</span>
       </a>
-      <a href="https://github.com" target="_blank">
+      <a [href]="links.contact.github" target="_blank">
         <mat-icon svgIcon="github"></mat-icon>
         <span>Github</span>
       </a>
     </div>
+    }
     <button mat-flat-button color="primary" class="resume-button">
       Download Resume
     </button>
   </div>
-  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submit()">
+  <form
+    class="contact-form"
+    #f="ngForm"
+    [formGroup]="contactForm"
+    (ngSubmit)="submit()"
+  >
     <mat-form-field appearance="outline" class="field-group">
       <mat-label>Full name</mat-label>
       <input
@@ -40,7 +47,6 @@
         matInput
         placeholder="Please enter your email"
         formControlName="email"
-        [errorStateMatcher]="matcher"
       />
       <mat-error>{{ updateErrorMessage("email") }}</mat-error>
     </mat-form-field>
@@ -52,12 +58,7 @@
 
     <mat-form-field appearance="outline" class="field-group">
       <mat-label>Message</mat-label>
-      <textarea
-        matInput
-        formControlName="message"
-        rows="5"
-        [errorStateMatcher]="matcher"
-      ></textarea>
+      <textarea matInput formControlName="message" rows="5"></textarea>
       <span class="hint">
         {{ contactForm.get("message")?.value?.length || 0 }}/500
       </span>
@@ -69,7 +70,7 @@
         mat-raised-button
         type="reset"
         class="reset-btn"
-        (click)="reset()"
+        (click)="resetForm()"
       >
         Reset
       </button>

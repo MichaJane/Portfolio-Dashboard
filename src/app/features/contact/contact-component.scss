@@ -89,4 +89,9 @@
       }
     }
   }
+
+  @media (max-width: 767px){
+    flex-direction: column;
+    padding: 0;
+  }
 }
