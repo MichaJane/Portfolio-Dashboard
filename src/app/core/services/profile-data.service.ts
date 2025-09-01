@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Certification, Experience, Skill } from "../models/profile-data.model";
+import { AboutMe, Certification, Contact, Experience, Skill } from "../models/profile-data.model";
 import { map, Observable, of } from "rxjs";
 import { Stat } from "../models/project.model";
 
@@ -8,24 +8,24 @@ import { Stat } from "../models/project.model";
 })
 
 export class ProfileDataService{
-    private experiences: Experience[] =[
+  private experiences: Experience[] =[
    {
       role: 'Frontend Developer',
-      company: 'ABC Company',
+      company: 'Inchcape',
       start: '2023',
       end: '2025',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut perferendis minima quas at eveniet iusto ipsam sequi, non esse maiores quam, voluptatem quia ratione veniam earum vel eligendi. Eum, eligendi.'
+      description: 'Built UI components and supported feature implementations for an automotive platform using Angular.'
     },
     {
       role: 'Wordpress Developer - Work Immersion',
-      company: 'XYZ Company',
+      company: 'University of the East',
       start: '2023',
       end: '2023',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut perferendis minima quas at eveniet iusto ipsam sequi, non esse maiores quam, voluptatem quia ratione veniam earum vel eligendi. Eum, eligendi.'
+      description: 'Maintained and updated the CFAD website using WordPress and Elementor.'
     },
   ]
 
-   private certifications: Certification[] = [
+  private certifications: Certification[] = [
     {
       title: 'HCIA Artificial Intelligence',
       issuer: 'Huawei',
@@ -68,6 +68,22 @@ export class ProfileDataService{
     { name: 'Bootstrap', level: 70},
   ]
 
+  private contact: Contact = {
+    email: 'faustino.michajane@gmail.com',
+    linkedin: 'https://linkedin.com/in/mjane-faustino05',
+    github: 'https://github.com/MichaJane'
+  }
+
+  private aboutMeData: AboutMe = {
+    name: 'Michaela Faustino',
+    title: 'Frontend Developer',
+    bio: `I'm a Frontend developer with experience in Angular, TypeScript, and HTML/CSS. I enjoy building dynamic, responsive websites 
+    and I'm particularly interested in roles related to web development. My goal is to continue growing as a developer and contribute to meaningful projects. 
+    Outside coding, I spend time learning and exploring tools.`,
+    skill: this.skills,
+    contact: this.contact
+  }
+
   constructor(){}
 
   getExperience(): Observable<Experience[]>{
@@ -100,5 +116,9 @@ export class ProfileDataService{
         value: skills.length
       }))
     )
+  }
+
+  getAboutMe(): Observable<AboutMe>{
+    return of(this.aboutMeData);
   }
 }
