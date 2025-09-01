@@ -1,0 +1,86 @@
+.projects-page {
+  padding: 2rem;
+
+  .projects-stats{
+    gap: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    stats-card-component{
+      flex: 1 1 0;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-block: 2rem;
+    margin-inline: 0.5rem;
+
+    .project-card {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-content {
+        padding: 1rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .project-title {
+          margin: 0 0 0.5rem 0;
+        }
+
+        .project-desc {
+          margin: 0 0 1rem 0;
+          color: #666;
+        }
+
+        .project-buttons {
+          display: flex;
+          gap: 0.5rem;
+
+          .btn {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+
+            &.live {
+              background-color: var(--color-primary);
+              color: var(--color-text-light);
+              &:hover { background-color: var(--color-secondary); }
+            }
+
+            &.code {
+              background-color: var(--color-secondary);
+              color: var(--color-text-light);
+            }
+            &:hover {
+              opacity: 0.85;
+            }
+          }
+        }
+      }
+  }
+  }
+
+  .empty-project{
+    padding: 1rem;
+    color: #666;
+    font-style: italic;
+  }
+
+}

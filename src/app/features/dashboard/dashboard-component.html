@@ -1,0 +1,52 @@
+<main class="dashboard">
+  <section class="hero">
+    <mat-card class="hero-card">
+      <mat-card-content class="hero-card-content">
+        <div class="hero-img">
+          <img
+            src="assets/images/hero-image.jpg"
+            alt="my profile image"
+            class="profile-img"
+          />
+        </div>
+        <div class="hero-info">
+          <h1>Welcome! I'm <span class="highlight-name">Michaela</span></h1>
+          <span class="role">Frontend Developer | Angular Developer</span>
+          <p class="note">
+            This portfolio is work in progress. Thank you for visiting!
+          </p>
+          <div class="hero-actions">
+            <button
+              mat-flat-button
+              color="primary"
+              (click)="navigateToProjects()"
+            >
+              View Projects
+            </button>
+            <button
+              mat-stroked-button
+              color="accent"
+              (click)="navigateToContact()"
+            >
+              Contact Me
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section class="stats">
+    @for(dashStats of dashboardStats$ | async; track $index){
+    <stats-card-component
+      [value]="dashStats.value"
+      [label]="dashStats.label"
+      variant="dashboard"
+    ></stats-card-component>
+    }
+  </section>
+
+  <section class="highlights">
+    <highlights-component></highlights-component>
+  </section>
+</main>

@@ -1,0 +1,34 @@
+.dashboard-highlights{
+  display: grid;
+  grid-template-areas: "experience certifications skills";
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+
+  .experience{
+    grid-area: experience;
+  }
+  .skills{
+    grid-area: skills;
+  }
+  .certifications{
+    grid-area: certifications;
+  }
+
+  @media (max-width: 1024px){
+      grid-template-areas:
+    "experience skills"
+    "certifications skills"
+    ;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 768px){
+      grid-template-areas:
+    "experience"
+    "certifications"
+    "skills"
+    ;
+    grid-template-columns: 1fr;
+  }
+}

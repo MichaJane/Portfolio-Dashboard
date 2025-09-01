@@ -1,0 +1,18 @@
+@if (view === 'chips') {
+<profile-card-component icon="build" title="Technical Skills">
+  <mat-chip-set card-content>
+    @for( skill of skills; track $index){
+    <mat-chip color="primary" selected>{{ skill.name }}</mat-chip>
+    }
+  </mat-chip-set>
+</profile-card-component>
+} @else { @for(skill of skills; track $index){
+<div class="progress-bar">
+  <span>{{ skill.name }}</span>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="skill.level"
+    color="accent"
+  ></mat-progress-bar>
+</div>
+} }

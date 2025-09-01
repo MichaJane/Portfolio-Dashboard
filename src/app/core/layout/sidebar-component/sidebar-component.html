@@ -1,0 +1,13 @@
+<ul class="sidenav-menu">
+  @for(navItem of sidenavItems; track navItem){
+  <li
+    class="sidenav-item"
+    [routerLink]="navItem.link"
+    routerLinkActive="active"
+  >
+    <mat-icon class="sidenav-icon">{{ navItem.icon }}</mat-icon>
+    <span>{{ navItem.label }}</span>
+  </li>
+  }
+</ul>
+<!-- (click)="closeSidenav()" -->

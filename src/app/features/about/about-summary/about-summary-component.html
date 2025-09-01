@@ -1,0 +1,11 @@
+<div class="about-wrapper">
+  <experience-component
+    class="experience"
+    [experiences]="(experience$ | async) ?? []"
+    [showDetails]="true"
+  ></experience-component>
+  <certifications-component
+    class="certifications"
+    [certifications]="(certifications$ | async) ?? []"
+  ></certifications-component>
+</div>

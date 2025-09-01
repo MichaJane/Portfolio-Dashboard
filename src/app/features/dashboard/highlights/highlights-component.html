@@ -1,0 +1,18 @@
+<div class="dashboard-highlights">
+  <experience-component
+    class="experience"
+    [experiences]="(experience$ | async) ?? []"
+    [isButtonVisible]="true"
+    (viewAllClicked)="navigateToAbout()"
+  ></experience-component>
+  <skills-component
+    class="skills"
+    [skills]="(skills$ | async) ?? []"
+  ></skills-component>
+  <certifications-component
+    class="certifications"
+    [certifications]="(certifications$ | async) ?? [] | slice : 0 : 3"
+    [isButtonVisible]="true"
+    (viewAllClicked)="navigateToAbout()"
+  ></certifications-component>
+</div>

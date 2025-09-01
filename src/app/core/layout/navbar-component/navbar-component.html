@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="navbar">
+  <button
+    mat-icon-button
+    (click)="drawer.toggle()"
+    [class.hidden]="!(isHandset$ | async)"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="spacer"></span>
+  <span class="page-title">{{ pageTitle$ | async }}</span>
+
+  <div class="navbar-icon-btn">
+    <button mat-icon-button>
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

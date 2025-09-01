@@ -1,0 +1,22 @@
+<profile-card-component
+  icon="school"
+  title="Certifications"
+  [showButton]="isButtonVisible"
+>
+  <div class="cert-list-item" card-content>
+    @for(cert of certifications; track cert){
+    <div class="cert-item">
+      <img [src]="cert.logo" alt="{{ cert.issuer }} logo" class="cert-logo" />
+      <div class="cert-details">
+        <h3 class="cert-title">{{ cert.title }}</h3>
+        <p class="cert-issuer">{{ cert.issuer }} - {{ cert.date }}</p>
+      </div>
+    </div>
+    }
+  </div>
+  <div card-actions>
+    <button mat-button (click)="onViewAllClick()" class="btn-view">
+      View All
+    </button>
+  </div>
+</profile-card-component>

@@ -1,0 +1,9 @@
+<mat-card class="stats-card" [ngClass]="variant">
+  @if(icon){
+  <mat-icon>{{ icon }}</mat-icon>
+  }
+  <mat-card-content>
+    <div class="stats-label">{{ label }}</div>
+    <div class="stats-value">{{ value }}</div>
+  </mat-card-content>
+</mat-card>

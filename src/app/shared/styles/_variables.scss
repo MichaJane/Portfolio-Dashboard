@@ -1,0 +1,90 @@
+@use '@angular/material' as mat;
+
+$brand-primary: (
+  50: #F3ECF6,
+  100: #E3D9EF,
+  200: #D3C4D8,
+  300: #C5B0CD,
+  400: #B79BC3,
+  500: #A987B8,
+  600: #9B76AD,
+  700: #8C64A2,
+  800: #7E5198,
+  900: #703F8D,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(white, 0.87),
+    500: rgba(white, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  ),
+);
+
+$brand-accent: (
+  50: #E6EDF2,
+  100: #C0CDD9,
+  200: #98ACC0,
+  300: #718B99,
+  400: #577383,
+  500: #415E72,
+  600: #3B576C,
+  700: #334D60,
+  800: #2B4456,
+  900: #1C3342,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(white, 0.87),
+    500: rgba(white, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  ),
+);
+
+$brand-warn: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(white, 0.87),
+    500: rgba(white, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  ),
+);
+
+$custom-typography: mat.m2-define-typography-config(
+  $font-family: 'Poppins, sans-serif'
+);
+
+$primary-palette: mat.m2-define-palette($brand-primary);
+$accent-palette: mat.m2-define-palette($brand-accent);
+$warn-palette: mat.m2-define-palette($brand-warn);
+
+$primary-color: #c5b0cd;
+$secondary-color: #415e72;
+$tertiary-color: #17313e;
+
+$font-family: 'Poppins', sans-serif;

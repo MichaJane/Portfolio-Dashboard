@@ -1,0 +1,77 @@
+<main class="projects-page">
+  <section class="projects-stats">
+    @for(stat of projectStats$ | async; track stat.label){
+    <stats-card-component
+      [label]="stat.label"
+      [value]="stat.value"
+      variant="projects"
+      class="project-stat-card"
+    ></stats-card-component>
+    }
+  </section>
+
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="In Progress">
+      @if((inProgress$ | async)?.length){
+      <div class="projects-grid">
+        @for(project of inProgress$ | async; track $index){
+        <ng-container
+          *ngTemplateOutlet="projectCardTemplate; context: { project: project }"
+        ></ng-container>
+        }
+      </div>
+      } @else{
+      <p class="empty-project">
+        No projects currently in progress. Check back soon
+      </p>
+      }
+    </mat-tab>
+    <mat-tab label="Completed">
+      @if((completed$ | async)?.length){
+      <div class="projects-grid">
+        @for(project of completed$ | async; track $index){
+        <ng-container
+          *ngTemplateOutlet="projectCardTemplate; context: { project }"
+        ></ng-container>
+        }
+      </div>
+      }@else{
+      <p class="empty-project">
+        No completed projects yet. Actively working them.
+      </p>
+      }
+    </mat-tab>
+    <mat-tab label="Upcoming">
+      @if((upcoming$ | async)?.length){
+      <div class="projects-grid">
+        @for(project of upcoming$ | async; track $index){
+        <ng-container
+          *ngTemplateOutlet="projectCardTemplate; context: { project: project }"
+        ></ng-container>
+        }
+      </div>
+      }@else{
+      <p class="empty-project">Stay Tuned for upcoming projects!</p>
+      }
+    </mat-tab>
+  </mat-tab-group>
+</main>
+
+<ng-template #projectCardTemplate let-project="project">
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">{{ project.title }}</h3>
+      <p class="project-desc">
+        {{ project.description }}
+      </p>
+
+      <div class="project-buttons">
+        @if(project.liveUrl){
+        <a [href]="project.liveUrl" target="_blank" class="btn live">Live</a>
+        } @if(project.codeUrl){
+        <a [href]="project.codeUrl" target="_blank" class="btn code">Code</a>
+        }
+      </div>
+    </div>
+  </div>
+</ng-template>

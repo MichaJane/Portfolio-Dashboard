@@ -1,59 +1,50 @@
-# AngularDashboard
+# Portfolio Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+A personal portfolio dashboard that is built with Angular and Angular Material. It aim to showcase my projects, skills and experience in a more dynamic and business-like than a traditional resume.
 
-## Development server
+The goal is to start as my **personal portfolio** and later upgrade it with **more features** that make it useful to other users.
 
-To start a local development server, run:
+⚠️ **Note**: This project is still **In progress** and the design/layout will continue to improve in upcoming updates. Some features are not yet fully implemented and some information are temporary placeholder.
 
-```bash
-ng serve
-```
+This dashboard will continue to evolve as I improve my skills and explore new tools and features.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Current Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Dashboard overview**: Welcome card, highlights, and basic stats (projects, experience, skills).
+- **About section**: Profile card and more detailed highlights.
+- **Projects section**: Categorized into _In progress_, _Upcoming_, _Completed_ and with basic stats.
+- **Contact form**: EmailJS (validation improvements ongoing).
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Work in Progress / Next Steps
 
-```bash
-ng generate --help
-```
+[ ] Add footer section.
+[ ] Add animation and responsive layout.
+[ ] Improve overall design and styling.
+[ ] Improve contact form validation.
+[ ] Deploy to Netlify.
+[ ] (future goal) Expand to multi-user portfolio dashboard system.
 
-## Building
+---
 
-To build the project run:
+## Tech Stack
 
-```bash
-ng build
-```
+- HTML5
+- CSS3 (Flexbox, Grid)
+- SCSS / SASS
+- TypeScript
+- Angular
+- EmailJs
+- Angular Material
+- Angular CDK
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Notes
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- For now, this project is built for **personal use only** to showcase my portfolio.
+- All data is currently hardcoded in Angular services/components as it's not connected to any API.
+- In future updates, the goal is to connect it to backend or API so data can be more dynamic.

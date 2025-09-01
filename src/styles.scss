@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'app/shared/styles/themes' as themes;
+
+@include mat.core();
+@include themes.light-theme-mixin();
+
+:root {
+  --color-primary: #c5b0cd;
+  --color-secondary: #415e72;
+  --color-tertiary: #17313e;
+  --color-surface: #faf7f9;
+
+  --color-text: #17313e;
+  --color-text-light: #faf7f9;
+
+  --color-success: #4caf50;
+  --color-warning: #ffc107;
+  --color-error: #e57373;
+  
+  --color-card-bg: #ffffff;
+
+  --color-sidebar-bg: var(--color-primary);
+  --color-sidebar-text: var(--color-text);
+  --color-sidebar-text-active: var(--color-secondary);
+  --color-sidebar-icon: var(--color-text);
+  --color-sidebar-icon-active: var(--color-secondary);
+  --color-sidebar-hover: var(--color-secondary);
+
+  @include mat.snack-bar-overrides((
+    button-color: var(--color-secondary),
+    container-color: var(--color-surface)
+  ));
+
+  @include mat.card-overrides((
+    elevated-container-color: var(--color-card-bg),
+    elevated-container-shape: 12px,
+  ));
+}
+
+html,
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  overflow: hidden
+}

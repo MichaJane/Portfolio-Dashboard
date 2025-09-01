@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@use 'variables' as var;
+
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: var.$primary-palette,
+    accent: var.$accent-palette,
+    warn: var.$warn-palette
+  ),
+  typography: (
+    brand-family: var.$custom-typography,
+  ),
+));
+
+@mixin light-theme-mixin(){
+  @include mat.all-component-themes($light-theme);
+}

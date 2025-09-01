@@ -1,0 +1,8 @@
+<div class="snackbar" [ngClass]="data.type">
+  @if(data.icon){
+  <div class="icon">
+    <mat-icon class="icon">{{ data.icon }}</mat-icon>
+  </div>
+  }
+  <span class="message">{{ data.message }}</span>
+</div>

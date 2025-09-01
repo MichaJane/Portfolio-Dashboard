@@ -1,0 +1,19 @@
+.snackbar{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+
+  .icon{
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  &.success {
+    color: var(--color-success);
+  }
+  &.error{
+    color: var(--color-error);
+  }
+}

@@ -1,0 +1,18 @@
+.profile-card {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  padding: 1rem;
+  
+  
+  mat-card-title{
+    padding: 0;
+    font-size: 1.25rem;
+  }
+  
+  mat-card-content{
+    flex: 1;
+  }
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
