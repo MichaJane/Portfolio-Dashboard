@@ -21,12 +21,13 @@ This dashboard will continue to evolve as I improve my skills and explore new to
 
 ## Work in Progress / Next Steps
 
-[ ] Add footer section.
-[ ] Add animation and responsive layout.
-[ ] Improve overall design and styling.
-[ ] Improve contact form validation.
-[ ] Deploy to Netlify.
-[ ] (future goal) Expand to multi-user portfolio dashboard system.
+- [ ] Replace placeholder with real information.
+- [ ] Add footer section.
+- [ ] Add animation and responsive layout.
+- [ ] Improve overall design and styling.
+- [ ] Improve contact form validation.
+- [ ] Deploy to Netlify.
+- [ ] (future goal) Expand to multi-user portfolio dashboard system.
 
 ---
 
@@ -40,6 +41,37 @@ This dashboard will continue to evolve as I improve my skills and explore new to
 - EmailJs
 - Angular Material
 - Angular CDK
+
+---
+
+## How to run the app locally
+
+1. Clone the repository:
+
+```
+git clone [https://github.com/MichaJane/Portfolio-Dashboard.git](https://github.com/MichaJane/Portfolio-Dashboard.git)
+```
+
+2. Navigate to the project directory:
+
+```
+cd Portfolio-Dashboard
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Run the application:
+
+```
+ng serve
+```
+
+5. View the app:
+   Open your browser and navigate to Local: [http://localhost:4200/](http://localhost:4200/)
 
 ---
 
