@@ -13,8 +13,8 @@ export class ProjectService{
       title: 'Portfolio Website',
       description: 'A personal portfolio dashboard website built using Angular',
       status: this.projectStatus.InProgress,
-      liveUrl: 'https://camping-demo.com',
-      codeUrl: 'https://github.com/username/camping-website'
+      liveUrl: '#',
+      codeUrl: '#'
     },
       {
       title: 'Camping Website',
