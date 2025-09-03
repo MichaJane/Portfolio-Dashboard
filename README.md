@@ -2,11 +2,9 @@
 
 A personal portfolio dashboard that is built with Angular and Angular Material. It aim to showcase my projects, skills and experience in a more dynamic and business-like than a traditional resume.
 
-The goal is to start as my **personal portfolio** and later upgrade it with **more features** that make it useful to other users.
+The goal is to start as my **personal portfolio** and later upgrade it with **more features** that make it useful to other users. This dashboard will continue to evolve as I improve my skills and explore new tools and features.
 
-⚠️ **Note**: This project is still **In progress** and the design/layout will continue to improve in upcoming updates. Some features are not yet fully implemented and some information are temporary placeholder.
-
-This dashboard will continue to evolve as I improve my skills and explore new tools and features.
+⚠️ **Note**: This project is still **In progress**. The design, layout and features will continue to improve in upcoming updates. ⚠️
 
 ---
 
@@ -21,12 +19,12 @@ This dashboard will continue to evolve as I improve my skills and explore new to
 
 ## Work in Progress / Next Steps
 
-- [ ] Replace placeholder with real information.
+- [x] Replace placeholder with real information.
+- [x] Deploy to Netlify.
 - [ ] Add footer section.
 - [ ] Add animation and responsive layout.
 - [ ] Improve overall design and styling.
 - [ ] Improve contact form validation.
-- [ ] Deploy to Netlify.
 - [ ] (future goal) Expand to multi-user portfolio dashboard system.
 
 ---
@@ -44,12 +42,18 @@ This dashboard will continue to evolve as I improve my skills and explore new to
 
 ---
 
+## View live project
+Here is the live version of the project:
+[portfolio-dashboard-v1.netlify.app](portfolio-dashboard-v1.netlify.app)
+
+---
+
 ## How to run the app locally
 
 1. Clone the repository:
 
 ```
-git clone [https://github.com/MichaJane/Portfolio-Dashboard.git](https://github.com/MichaJane/Portfolio-Dashboard.git)
+git clone https://github.com/MichaJane/Portfolio-Dashboard.git
 ```
 
 2. Navigate to the project directory:
