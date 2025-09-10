@@ -1,7 +1,7 @@
 <profile-card-component
-  icon="work"
   title="Experience"
   [showButton]="isButtonVisible"
+  (viewAllClicked)="onCardViewClicked()"
 >
   <div class="timeline" card-content>
     @for(exp of experiences; track exp.company){
@@ -19,10 +19,5 @@
       </div>
     </div>
     }
-  </div>
-  <div card-actions>
-    <button matButton (click)="onViewAllClick()" class="btn-view">
-      View All
-    </button>
   </div>
 </profile-card-component>

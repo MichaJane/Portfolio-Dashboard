@@ -10,9 +10,9 @@ import { Certification } from '../../../core/models/profile-data.model';
 export class CertificationsComponent {
   @Input() certifications: Certification[] = [];
   @Input() isButtonVisible = false;
-  @Output() viewAllClicked = new EventEmitter<void>();
+  @Output() viewAction = new EventEmitter<void>();
 
-  onViewAllClick(){
-    this.viewAllClicked.emit();
+  onCardViewClicked(){
+    this.viewAction.emit();
   }
 }

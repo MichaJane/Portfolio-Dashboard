@@ -3,7 +3,6 @@
   grid-template-areas: "experience certifications skills";
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
-  align-items: stretch;
 
   .experience{
     grid-area: experience;
