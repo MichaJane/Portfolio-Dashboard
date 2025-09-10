@@ -94,7 +94,7 @@ export class ProfileDataService{
     return this.getExperience().pipe(
       map((experiences) => ({
         label: 'Work Experiences',
-        value: experiences.length
+        value: experiences.length,
       }))
     )
   }
@@ -113,7 +113,7 @@ export class ProfileDataService{
     return this.getSkills().pipe(
       map((skills) => ({
         label: 'Total Skills',
-        value: skills.length
+        value: skills.length,
       }))
     )
   }

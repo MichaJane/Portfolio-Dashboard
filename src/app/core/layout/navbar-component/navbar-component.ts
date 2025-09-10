@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointService } from '../../services/breakpoint.service';
-import { Observable } from 'rxjs';
 import { PageTitleService } from '../../services/page-title.service';
 
 @Component({
@@ -12,14 +11,7 @@ import { PageTitleService } from '../../services/page-title.service';
 })
 export class NavbarComponent {
   @Input() drawer!: MatSidenav;
-  isHandset$: Observable<boolean>;
-  pageTitle$: Observable<string>;
 
-  constructor(
-    private breakpointService: BreakpointService,
-    private pageTitleService: PageTitleService
-  ){
-    this.isHandset$ = this.breakpointService.isMobile$;
-    this.pageTitle$ = this.pageTitleService.pageTitle$
-  }
+  isHandset$ = inject(BreakpointService).isMobile$;
+  pageTitle$ = inject(PageTitleService).pageTitle$;
 }
