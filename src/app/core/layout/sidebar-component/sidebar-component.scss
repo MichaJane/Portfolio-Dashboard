@@ -1,6 +1,6 @@
 .sidenav-menu {
   list-style: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0;
   position: relative;
 
   .sidenav-item{
@@ -14,8 +14,8 @@
     transition: background 0.3s;
 
     &.active, &:hover{
-      color: var(--color-sidebar-text-active);
-      background-color: rgba(197, 176, 205, 0.2);
+      color: var(--color-secondary);
+      background-color: var(--color-primary);
 
       .sidenav-icon{
         color: var(--color-sidebar-icon-active);

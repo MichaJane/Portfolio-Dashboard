@@ -19,12 +19,13 @@
   
   --color-card-bg: #ffffff;
 
-  --color-sidebar-bg: var(--color-primary);
-  --color-sidebar-text: var(--color-text);
+  --color-sidebar-bg: var(--color-secondary);
+  --color-sidebar-text: var(--color-text-light);
   --color-sidebar-text-active: var(--color-secondary);
-  --color-sidebar-icon: var(--color-text);
+  --color-sidebar-nav-active: var(--color-primary)
+  --color-sidebar-icon: var(--color-text-light);
   --color-sidebar-icon-active: var(--color-secondary);
-  --color-sidebar-hover: var(--color-secondary);
+  --color-sidebar-hover: var(--color-primary);
 
   @include mat.snack-bar-overrides((
     button-color: var(--color-secondary),

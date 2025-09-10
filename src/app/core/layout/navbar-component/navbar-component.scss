@@ -1,20 +1,15 @@
 .navbar {
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1000;
 
   .spacer{
-    flex: 1;
+    flex: 1 1 auto;
   }
 
   .hidden{
-    visibility: hidden;
+    display: none;
   }
 
   .page-title {
-    flex: 1;
+    margin-left: 1rem;
     font-weight: 700;
     font-size: 1.25rem;
   }

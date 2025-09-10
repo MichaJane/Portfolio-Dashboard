@@ -1,7 +1,7 @@
 <profile-card-component
-  icon="school"
   title="Certifications"
   [showButton]="isButtonVisible"
+  (viewAllClicked)="onCardViewClicked()"
 >
   <div class="cert-list-item" card-content>
     @for(cert of certifications; track cert){
@@ -13,10 +13,5 @@
       </div>
     </div>
     }
-  </div>
-  <div card-actions>
-    <button mat-button (click)="onViewAllClick()" class="btn-view">
-      View All
-    </button>
   </div>
 </profile-card-component>

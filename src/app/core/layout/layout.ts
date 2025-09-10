@@ -1,8 +1,7 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, Observable, shareReplay, tap } from 'rxjs';
+import { Component, inject } from '@angular/core';
 import { BreakpointService } from '../services/breakpoint.service';
+import { ProfileDataService } from '../services/profile-data.service';
+import { IconService } from '../services/icon.service';
 
 @Component({
   selector: 'layout',
@@ -12,12 +11,8 @@ import { BreakpointService } from '../services/breakpoint.service';
 })
 export class Layout {
   pageTitle = '';
-  isHandset$: Observable<boolean>
-
-  constructor(
-    private breakpointService: BreakpointService
-  ) 
-  {
-    this.isHandset$ = this.breakpointService.isMobile$;
-  }
+  
+  isHandset$ = inject(BreakpointService).isMobile$;
+  aboutMe$ = inject(ProfileDataService).getAboutMe();
+  iconService = inject(IconService);
 }

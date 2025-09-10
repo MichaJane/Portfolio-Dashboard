@@ -6,12 +6,13 @@
           <img
             src="assets/images/hero-image.jpg"
             alt="my profile image"
+            mat-card-md-image
             class="profile-img"
           />
         </div>
         <div class="hero-info">
-          <h1>Welcome! I'm <span class="highlight-name">Michaela</span></h1>
-          <span class="role">Frontend Developer | Angular Developer</span>
+          <h2>Welcome! I'm <span class="highlight-name">Michaela</span></h2>
+          <!-- <span class="role">Frontend Developer | Angular Developer</span> -->
           <p class="note">
             This portfolio is work in progress. Thank you for visiting!
           </p>
@@ -33,17 +34,16 @@
           </div>
         </div>
       </mat-card-content>
+      <div class="stats">
+        @for(dashStats of dashboardStats$ | async; track $index){
+        <stats-card-component
+          [value]="dashStats.value"
+          [label]="dashStats.label"
+          variant="dashboard"
+        ></stats-card-component>
+        }
+      </div>
     </mat-card>
-  </section>
-
-  <section class="stats">
-    @for(dashStats of dashboardStats$ | async; track $index){
-    <stats-card-component
-      [value]="dashStats.value"
-      [label]="dashStats.label"
-      variant="dashboard"
-    ></stats-card-component>
-    }
   </section>
 
   <section class="highlights">

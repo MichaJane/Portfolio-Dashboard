@@ -1,47 +1,38 @@
 .dashboard {
-  padding: 2rem;
+  padding: 1rem;
   display: grid;
-  grid-template-areas: 
-  "hero"
-  "stats"
-  "highlights"
-  ;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 2rem;
 
   .hero {
-    grid-area: hero;
-
     .hero-card{
-      padding: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem;
       box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
 
       .hero-card-content {
         display: flex;
-        align-items: center;
-        gap: 3rem;
-        padding: 2rem;
-        margin: 0 auto;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
 
         .hero-img{
           display: flex;
           justify-content: center;
 
           .profile-img{
-            width: 200px;
-            height: 200px;
             border-radius: 50%;
-            object-fit: cover;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           }
+        
         }
-
         .hero-info {
-          flex: 2;
 
-          h1 {
-            font-size: 2.2rem;
-            margin-block: 0.5rem;
+          h2 {
+            font-size: 1.5rem;
+            margin-block: 0.25rem;
 
             .highlight-name {
               color: var(--color-primary);
@@ -50,14 +41,14 @@
           }
 
           .role {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 500;
             color: var(--color-accent);
-            margin-bottom: 1rem;
           }
 
           .note {
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            margin: 0;
             color: #666;
           }
 
@@ -65,8 +56,13 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 1rem;
 
-            @media (max-width: 768px){
+            button{
+              font-size: 0.85rem;
+            }
+
+            @media (max-width: 425px){
               justify-content: center;
               
               button{
@@ -76,52 +72,23 @@
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 425px) {
           flex-direction: column;
           text-align: center;
-          
+          padding: 0; 
         }
       }
+
+      .stats{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px){ 
+        flex-direction: column;
+      }
     }
-  }
-
-
-  .stats{
-    grid-area: stats;
-    margin-block: 1rem;
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    @media (max-width:1024px){
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width:600px){
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .highlights{
-    grid-area: highlights;
-  }
-
-  @media (max-width: 1024px){
-    grid-template-areas:
-    "hero hero"
-    "stats stats"
-    "highlights highlights"
-    ;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: 768px){
-    padding: 0;
-    grid-template-areas: 
-    "hero"
-    "stats"
-    "highlights"
-    ;
-    grid-template-columns: 1fr;
   }
 }
