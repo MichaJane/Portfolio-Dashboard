@@ -1,5 +1,5 @@
 @if (view === 'chips') {
-<profile-card-component icon="build" title="Technical Skills">
+<profile-card-component title="Technical Skills">
   <mat-chip-set card-content>
     @for( skill of skills; track $index){
     <mat-chip color="primary" selected>{{ skill.name }}</mat-chip>

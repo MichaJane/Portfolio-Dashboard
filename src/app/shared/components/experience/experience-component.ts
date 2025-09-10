@@ -9,11 +9,11 @@ import { Experience } from '../../../core/models/profile-data.model';
 })
 export class ExperienceComponent {
   @Input() showDetails = false;
-  @Input() isButtonVisible = false;
   @Input() experiences: Experience[] = [];
-  @Output() viewAllClicked = new EventEmitter<void>();
+  @Input() isButtonVisible = false;
+  @Output() viewAction = new EventEmitter<void>();
 
-  onViewAllClick(){
-    this.viewAllClicked.emit();
+  onCardViewClicked(){
+    this.viewAction.emit();
   }
 }

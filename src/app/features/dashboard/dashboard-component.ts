@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ProjectService } from '../../core/services/project.services';
 import { combineLatest, map, Observable } from 'rxjs';
 import { Stat } from '../../core/models/project.model';
-import { DashboardService } from '../../core/services/dashboard.service';
 import { ProfileDataService } from '../../core/services/profile-data.service';
 import { Router } from '@angular/router';
 
@@ -23,7 +22,6 @@ export class DashboardComponent {
   dashboardStats$: Observable<Stat[]>;
 
   constructor(
-    private dashboardService: DashboardService, 
     private projectService: ProjectService,
     private profileDataService: ProfileDataService,
     private router: Router
@@ -32,15 +30,14 @@ export class DashboardComponent {
       this.projectService.projectStats$,
       this.profileDataService.getSkillsStat(),
       this.profileDataService.getExperienceStat(),
-      this.dashboardService.getGithubStat(),
     ]).pipe(
-      map(([projectStats, skillsStat, experienceStat, dashboardStats]) => {
+      map(([projectStats, skillsStat, experienceStat]) => {
         const finalStats = []
         const totalProjectsStat = projectStats.find(stat => stat.label === 'Total Projects');
         if (totalProjectsStat) {
           finalStats.push(totalProjectsStat);
         }
-        finalStats.push(skillsStat, experienceStat, dashboardStats)
+        finalStats.push(skillsStat, experienceStat)
         return finalStats;
       })
     );

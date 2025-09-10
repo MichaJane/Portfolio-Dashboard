@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef, Input } from '@angular/core';
+import { Component, ContentChild, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'profile-card-component',
@@ -8,8 +8,13 @@ import { Component, ContentChild, ElementRef, Input } from '@angular/core';
 })
 export class ProfileCardComponent {
   @ContentChild('card-actions') cardActions!: ElementRef;
-  @Input() icon = '';
+  @Input() icon? = '';
   @Input() title = '';
-  @Input() showButton = false;
+  @Input() showButton? = false;
+  @Input() showCardActions? = false;
+  @Output() viewAllClicked = new EventEmitter<void>();
 
+  onViewAllClick(){
+    this.viewAllClicked.emit();
+  }
 }
