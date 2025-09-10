@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { Project, ProjectStat, ProjectStatus, Stat } from '../../core/models/project.model';
-import { Observable } from 'rxjs';
+import { Component, inject } from '@angular/core';
+import { ProjectStatus } from '../../core/models/project.model';
 import { ProjectService } from '../../core/services/project.services';
 
 @Component({
@@ -10,19 +9,13 @@ import { ProjectService } from '../../core/services/project.services';
   styleUrl: './projects-component.scss'
 })
 export class ProjectsComponent {
-  projectStatus = ProjectStatus;
+  readonly projectStatus = ProjectStatus;
 
-  projects$: Observable<Project[]>;
-  projectStats$: Observable<Stat[]>;
-  inProgress$: Observable<Project[]>;
-  completed$: Observable<Project[]>;
-  upcoming$: Observable<Project[]>;
+  projectService = inject(ProjectService);
   
-  constructor(private projectService: ProjectService){
-    this.projects$ = this.projectService.projects$;
-    this.projectStats$ = this.projectService.projectStats$;
-    this.inProgress$ = this.projectService.getProjectsByStatus(this.projectStatus.InProgress);
-    this.completed$ = this.projectService.getProjectsByStatus(this.projectStatus.Completed);
-    this.upcoming$ = this.projectService.getProjectsByStatus(this.projectStatus.Upcoming);
-  }
+  projects$ = this.projectService.projects$;
+  projectStats$ = this.projectService.projectStats$;
+  inProgress$ = this.projectService.getProjectsByStatus(this.projectStatus.InProgress);
+  completed$ = this.projectService.getProjectsByStatus(this.projectStatus.Completed);
+  upcoming$ = this.projectService.getProjectsByStatus(this.projectStatus.Upcoming);
 }

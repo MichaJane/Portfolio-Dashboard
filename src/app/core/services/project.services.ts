@@ -13,8 +13,8 @@ export class ProjectService{
       title: 'Portfolio Website',
       description: 'A personal portfolio dashboard website built using Angular',
       status: this.projectStatus.InProgress,
-      liveUrl: '#',
-      codeUrl: '#'
+      liveUrl: 'https://portfolio-dashboard-v1.netlify.app',
+      codeUrl: 'https://github.com/MichaJane/Portfolio-Dashboard.git'
     },
       {
       title: 'Camping Website',
@@ -30,6 +30,12 @@ export class ProjectService{
       title: 'Business Website',
       description: 'A responsive website for business',
       status: this.projectStatus.Upcoming,
+    },
+    {
+      title: 'TaskBoard',
+      description: 'A mini task management website built using Angular',
+      status: this.projectStatus.InProgress,
+      codeUrl: 'https://github.com/MichaJane/task-board.git'
     }
   ];
 

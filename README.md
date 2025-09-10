@@ -4,7 +4,7 @@ A personal portfolio dashboard that is built with Angular and Angular Material. 
 
 The goal is to start as my **personal portfolio** and later upgrade it with **more features** that make it useful to other users. This dashboard will continue to evolve as I improve my skills and explore new tools and features.
 
-⚠️ **Note**: This project is still **In progress**. The design, layout and features will continue to improve in upcoming updates. ⚠️
+⚠️ **Note**: This project is still **In progress**. The design, layout and features will continue to improve in upcoming updates.
 
 ---
 
@@ -21,7 +21,6 @@ The goal is to start as my **personal portfolio** and later upgrade it with **mo
 
 - [x] Replace placeholder with real information.
 - [x] Deploy to Netlify.
-- [ ] Add footer section.
 - [ ] Add animation and responsive layout.
 - [ ] Improve overall design and styling.
 - [ ] Improve contact form validation.
@@ -43,8 +42,9 @@ The goal is to start as my **personal portfolio** and later upgrade it with **mo
 ---
 
 ## View live project
+
 Here is the live version of the project:
-[portfolio-dashboard-v1.netlify.app](portfolio-dashboard-v1.netlify.app)
+[https://portfolio-dashboard-v1.netlify.app](https://portfolio-dashboard-v1.netlify.app)
 
 ---
 
