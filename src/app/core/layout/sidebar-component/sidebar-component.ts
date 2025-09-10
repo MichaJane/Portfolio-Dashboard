@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointService } from '../../services/breakpoint.service';
 import { take } from 'rxjs';
@@ -17,11 +17,10 @@ export class SidebarComponent {
     {label: 'Projects', link: '/projects', icon: 'work'},
     {label: 'Contact', link: '/contact', icon: 'mail'},
   ]
-
-  constructor(private breakpoint: BreakpointService){}
+  breakpointService = inject(BreakpointService);
 
   closeSidenav() {
-    this.breakpoint.isMobile$.pipe(take(1)).subscribe(() => {
+    this.breakpointService.isMobile$.pipe(take(1)).subscribe(() => {
       this.drawer.close();
     })
   }
