@@ -8,6 +8,7 @@
           alt="my profile image"
           mat-card-lg-image
           class="profile-pic"
+          loading="eager"
         />
       </mat-card-header>
       <mat-card-content class="profile-card-content">
@@ -27,7 +28,7 @@
         <div class="skills-bar">
           <skills-component
             [view]="'progressBar'"
-            [skills]="aboutMe.skill"
+            [skills]="aboutMe.skills"
           ></skills-component>
         </div>
       </mat-card-content>

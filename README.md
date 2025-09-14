@@ -41,6 +41,17 @@ The goal is to start as my **personal portfolio** and later upgrade it with **mo
 
 ---
 
+## Backend API
+
+This project uses data from a mock REST API built with json-server and hosted on Render.
+
+Link API repo: [https://github.com/MichaJane/portfolio-api.git](https://github.com/MichaJane/portfolio-api.git)
+Live API URL: [https://portfolio-api-v1-dcji.onrender.com](https://portfolio-api-v1-dcji.onrender.com)
+
+⚠️ **Note**: The API may take few seconds to respond to first load.
+
+---
+
 ## View live project
 
 Here is the live version of the project:
