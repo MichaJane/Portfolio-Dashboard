@@ -1,47 +1,19 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject, filter, map, Observable } from "rxjs";
+import { inject, Injectable } from "@angular/core";
+import { map, Observable } from "rxjs";
 import { Project, ProjectStatus } from "../models/project.model";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService{
-  projectStatus = ProjectStatus;
+  readonly projectStatus = ProjectStatus;
+  private baseUrl = environment.baseUrl;
 
-  private projects: Project[] = [
-    {
-      title: 'Portfolio Website',
-      description: 'A personal portfolio dashboard website built using Angular',
-      status: this.projectStatus.InProgress,
-      liveUrl: 'https://portfolio-dashboard-v1.netlify.app',
-      codeUrl: 'https://github.com/MichaJane/Portfolio-Dashboard.git'
-    },
-      {
-      title: 'Camping Website',
-      description: 'A responsive website for camping enthusiasts',
-      status: this.projectStatus.Upcoming,
-    },
-    {
-      title: 'To Do list App',
-      description: 'HTML, CSS, VUE.JS',
-      status: this.projectStatus.Upcoming,
-    },
-    {
-      title: 'Business Website',
-      description: 'A responsive website for business',
-      status: this.projectStatus.Upcoming,
-    },
-    {
-      title: 'TaskBoard',
-      description: 'A mini task management website built using Angular',
-      status: this.projectStatus.InProgress,
-      codeUrl: 'https://github.com/MichaJane/task-board.git'
-    }
-  ];
+  http = inject(HttpClient);
 
-  private _projects = new BehaviorSubject<Project[]>(this.projects);
-  
-  projects$ = this._projects.asObservable();
+  projects$ = this.http.get<Project[]>(`${this.baseUrl}/projects`);
 
   projectStats$ = this.projects$.pipe(
     map((projects) => {

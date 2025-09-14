@@ -12,5 +12,5 @@ export class AboutComponent {
   profileDataService = inject(ProfileDataService)
   iconService = inject(IconService);
   
-  aboutMe$ = this.profileDataService.getAboutMe();
+  aboutMe$ = this.profileDataService.aboutMe$;
 }
