@@ -13,6 +13,6 @@ export class Layout {
   pageTitle = '';
   
   isHandset$ = inject(BreakpointService).isMobile$;
-  aboutMe$ = inject(ProfileDataService).getAboutMe();
+  aboutMe$ = inject(ProfileDataService).aboutMe$;
   iconService = inject(IconService);
 }

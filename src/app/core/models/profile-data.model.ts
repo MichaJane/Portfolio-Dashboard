@@ -1,4 +1,5 @@
 export interface Certification{
+  id: number;
   logo: string;
   title: string;
   issuer: string;
@@ -6,6 +7,7 @@ export interface Certification{
 }
 
 export interface Experience{
+  id: number;
   role: string;
   company: string;
   start: string;
@@ -27,6 +29,6 @@ export interface AboutMe{
   name: string;
   title: string;
   bio: string;
-  skill: Skill[]
+  skills: Skill[]
   contact: Contact
 }
