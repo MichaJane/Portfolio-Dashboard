@@ -1,5 +1,5 @@
 export enum ProjectStatus{
-  InProgress = 'in-progress',
+  InProgress = 'inProgress',
   Upcoming = 'upcoming',
   Completed = 'completed',
 }
@@ -12,6 +12,7 @@ export interface ProjectStat{
 }
 
 export interface Project{
+  id: number;
   title: string;
   description: string;
   status: ProjectStatus;

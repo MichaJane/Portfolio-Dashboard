@@ -33,7 +33,7 @@ export class ContactComponent{
       subject: [''],
       message: ['', {validators: [Validators.required, Validators.maxLength(500)], updateOn: 'change'}]
     })
-    this.contactLinks$ = this.profileDataService.getAboutMe();
+    this.contactLinks$ = this.profileDataService.aboutMe$;
   }
 
   updateErrorMessage(controlName: string) {
