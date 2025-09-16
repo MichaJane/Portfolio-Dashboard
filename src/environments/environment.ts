@@ -1,4 +1,6 @@
-export const environment = {
+import { Environment } from "./environment.model";
+
+export const environment: Environment = {
   production: false,
   emailJsServiceId: 'EMAILJS_SERVICE_ID',
   emailJsTemplateId: 'EMAILJS_TEMPLATE_ID',
