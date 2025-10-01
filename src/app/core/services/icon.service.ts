@@ -6,21 +6,18 @@ import { DomSanitizer } from "@angular/platform-browser";
   providedIn: 'root'
 })
 export class IconService{
+
+  private icons = ['gmail', 'linkedin', 'github', 'udemy', 'cisco', 'huawei', 'ribbon'];
+
   constructor(
     private matIconRegistry: MatIconRegistry, 
     private domSanitizer: DomSanitizer
   ){
-    this.matIconRegistry.addSvgIcon(
-      'gmail',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/gmail.svg')
-    )
-    this.matIconRegistry.addSvgIcon(
-      'linkedin',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/linkedin.svg')
-    )
-    this.matIconRegistry.addSvgIcon(
-      'github',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/github.svg')
-    )
+    this.icons.forEach((icon) => {
+      this.matIconRegistry.addSvgIcon(
+        icon,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/svg/${icon}.svg`)
+      )
+    })
   }
 }

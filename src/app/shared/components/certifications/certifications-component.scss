@@ -10,11 +10,17 @@
     gap: 0.75rem;
   }
   
-  .cert-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
+  .cert-icon {
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  mat-icon {
+    width: 32px;
+    height: 32px;
   }
+}
 
   .cert-details{
     h3, p{
@@ -31,4 +37,3 @@
     }
   }
 }
-

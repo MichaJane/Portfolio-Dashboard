@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileDataService } from '../../../core/services/profile-data.service';
+import { IconService } from '../../../core/services/icon.service';
 @Component({
   selector: 'highlights-component',
   standalone: false,
@@ -10,6 +11,7 @@ import { ProfileDataService } from '../../../core/services/profile-data.service'
 export class HighlightsComponent {
   router = inject(Router);
   profileDataService = inject(ProfileDataService);
+  iconService = inject(IconService);
 
   experience$ = this.profileDataService.getExperience();
   certifications$ = this.profileDataService.getCertifications();

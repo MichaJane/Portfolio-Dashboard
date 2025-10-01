@@ -6,12 +6,9 @@
   <div class="cert-list-item" card-content>
     @for(cert of certifications; track cert){
     <div class="cert-item">
-      <img
-        [src]="cert.logo"
-        alt="{{ cert.issuer }} logo"
-        class="cert-logo"
-        loading="lazy"
-      />
+      <div class="cert-icon">
+        <mat-icon [svgIcon]="cert.logo || 'ribbon'"></mat-icon>
+      </div>
       <div class="cert-details">
         <h3 class="cert-title">{{ cert.title }}</h3>
         <p class="cert-issuer">{{ cert.issuer }} - {{ cert.date }}</p>
